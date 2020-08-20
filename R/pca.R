@@ -16,7 +16,6 @@
 #' ncol = 2, nrow = 1)
 #' @export
 
-
 pca<-function(dados,compx,compy) {
 dados_pca <- PCA(dados[,-ncol(dados)], graph = FALSE)
 fviz_eig(dados_pca)
@@ -38,6 +37,7 @@ a<-fviz_pca_ind(dados_pca,
 )+ theme_minimal()  +  theme(panel.grid = element_blank())+ scale_shape_manual(values=seq(0,16))
 
 b<-fviz_pca_var(dados_pca,
+                geom.var = c("arrow"),
                 axes=c(compx,compy),
                 col.var = "black",
                 labelsize = 3,
