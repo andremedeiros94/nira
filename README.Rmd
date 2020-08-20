@@ -19,7 +19,9 @@ library(niradm)
 ```{r}
 # raw spectra
 vizplotraw(nir_seed)
+```
 
+```{r}
 # mean spectra per class
 vizplotmean(nir_seed)
 ```
