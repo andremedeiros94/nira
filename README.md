@@ -1,9 +1,5 @@
 
-<<<<<<< HEAD
 # niradm-package: Analysis and graphs of near-infrared
-=======
-# niradm-package: Analysis and graphs of near-infrared spectra
->>>>>>> 006663f50bfadcc6a1079b4dd3f6924840d14611
 
 ## Installation and loading
 
