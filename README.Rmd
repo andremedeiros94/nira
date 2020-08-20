@@ -2,7 +2,7 @@
 output: github_document
 ---
 
-# niradm-package: Analysis and graphics and near infrared spectra
+# niradm-package: Analysis and graphs of near-infrared
 ## Installation and loading
 - install the latest version from [GitHub](https://github.com/admedeiros/niradm-package) as follow:
 ```{r}
