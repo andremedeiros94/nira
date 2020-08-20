@@ -16,12 +16,12 @@ library(niradm)
 
 ## Examples
 ### Spectra Visualization
-```{r}
+```{r  fig.keep='all', fig.width=10, fig.height=5}
 # raw spectra
 vizplotraw(nir_seed)
 ```
 
-```{r}
+```{r  fig.keep='all', fig.width=10, fig.height=5}
 # mean spectra per class
 vizplotmean(nir_seed)
 ```
@@ -31,7 +31,7 @@ pca(nir_seed,1,2)
 ```
 
 ### Autoscaling and center
-```{r}
+```{r  fig.keep='all', fig.width=20, fig.height=5}
 data(nir_seed)
 dados<-scale_center(nir_seed)
 a<-vizplotmean(nir_seed)
@@ -43,7 +43,7 @@ ncol = 2, nrow = 1)
 ```
 
 ### Applying derivatives with Savitzky-Golay smoothing
-```{r}
+```{r  fig.keep='all', fig.width=10, fig.height=5}
 data(nir_seed)
 a<-vizplotmean(nir_seed)
 
