@@ -1,0 +1,28 @@
+---
+title: "README.Rmd"
+author: "André"
+date: "20/08/2020"
+output: github_document
+---
+
+# niradm-package: Analysis and graphics and near infrared spectra
+## Installation and loading
+- install the latest version from [GitHub](https://github.com/admedeiros/niradm-package) as follow:
+```{r}
+#Install
+if(!require(devtools)) install.packages("devtools")
+devtools::install_github("admedeiros/niradm-package")
+#install.packages("pkgload")
+#install.packages("processx")
+#install.packages('ps')
+#install.packages("ellipsis")
+#Load package
+library(niradm)
+```
+
+## Examples
+
+```{r}
+library(niradm)
+pca(nir_seed,1,2)
+```
