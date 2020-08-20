@@ -1,7 +1,4 @@
 ---
-title: "README.Rmd"
-author: "André"
-date: "20/08/2020"
 output: github_document
 ---
 
@@ -11,16 +8,21 @@ output: github_document
 ```{r}
 #Install
 if(!require(devtools)) install.packages("devtools")
-devtools::install_github("admedeiros/niradm-package")
-#install.packages("pkgload")
-#install.packages("processx")
-#install.packages('ps')
-#install.packages("ellipsis")
+if(!require(niradm)) devtools::install_github("admedeiros/niradm-package")
+
 #Load package
 library(niradm)
 ```
 
 ## Examples
+### Spectra Visualization
+```{r}
+# raw spectra
+vizplotraw(nir_seed)
+
+# mean spectra per class
+vizplotmean(nir_seed)
+```
 
 ```{r}
 library(niradm)

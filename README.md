@@ -1,7 +1,3 @@
-README.Rmd
-================
-André
-20/08/2020
 
 # niradm-package: Analysis and graphics and near infrared spectra
 
@@ -22,26 +18,37 @@ if(!require(devtools)) install.packages("devtools")
     ## Loading required package: usethis
 
 ``` r
-devtools::install_github("admedeiros/niradm-package")
+if(!require(niradm)) devtools::install_github("admedeiros/niradm-package")
 ```
 
-    ## Skipping install of 'niradm' from a github remote, the SHA1 (b6b3e51f) has not changed since last install.
-    ##   Use `force = TRUE` to force installation
+    ## Loading required package: niradm
 
 ``` r
-#install.packages("pkgload")
-#install.packages("processx")
-#install.packages('ps')
-#install.packages("ellipsis")
 #Load package
 library(niradm)
 ```
 
 ## Examples
 
+### Spectra Visualization
+
+``` r
+# raw spectra
+vizplotraw(nir_seed)
+```
+
+![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+
+``` r
+# mean spectra per class
+vizplotmean(nir_seed)
+```
+
+![](README_files/figure-gfm/unnamed-chunk-2-2.png)<!-- -->
+
 ``` r
 library(niradm)
 pca(nir_seed,1,2)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
