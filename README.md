@@ -56,16 +56,16 @@ pca(nir_seed,1,2)
 ### Autoscaling and center
 
 ``` r
-data(nir_seed)
-dados<-scale_center(nir_seed)
-a<-vizplotmean(nir_seed)
-b<-vizplotmean(dados)
-library(ggpubr)
+library(ggpubr) #for ggarrange
 ```
 
     ## Loading required package: ggplot2
 
 ``` r
+data(nir_seed)
+dados<-scale_center(nir_seed)
+a<-vizplotmean(nir_seed)
+b<-vizplotmean(dados)
 ggarrange(a, b,
 labels = c("A", "B"),
 ncol = 2, nrow = 1)
@@ -86,7 +86,6 @@ b<-vizplotmean(dados)
 #Applying 2nd derivative with Savitzky-Golay smoothing.
 dados<-der_SG(nir_seed,2,2,11)
 c<-vizplotmean(dados)
-library(ggpubr)
 ggarrange(a, b, c, 
 labels = c("A", "B", "C"),
 ncol = 2, nrow = 2,  widths = 15,
