@@ -89,7 +89,8 @@ c<-vizplotmean(dados)
 library(ggpubr)
 ggarrange(a, b, c, 
 labels = c("A", "B", "C"),
-ncol = 2, nrow = 2)
+ncol = 2, nrow = 2,  widths = 15,
+  heights = 10)
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
