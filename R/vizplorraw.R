@@ -20,7 +20,7 @@ vizplotraw<-function(dados){
   ggplot(data=dados1,
          aes(x=variable, y=value, group=ordem, colour=class)) + theme_classic()+
     geom_line()+scale_x_continuous(name ="Spectral Wavenumber(nm)", minor_breaks=2, n.breaks = 4)+
-    scale_color_manual(name="Classes",values=c("green", "violet", "mediumpurple1", "slateblue1", "purple", "purple3",
+    scale_color_manual(name="Class",values=c("green", "violet", "mediumpurple1", "slateblue1", "purple", "purple3",
                                                 "turquoise2", "skyblue", "steelblue", "blue2", "navyblue",
                                                 "orange", "tomato", "coral2", "palevioletred", "violetred"))
 }
