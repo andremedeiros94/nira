@@ -1,0 +1,21 @@
+Package: niradm
+Title: Analysis and graphics and near infrared spectra.
+Version: 0.0.4
+Authors@R: 
+    person("Andre Dantas de","Medeiros", email = "andre.d.medeiros@ufv.br",role = c("aut","cre"))
+Description: Package for data analysis of near infrared spectra. 
+             In addition, it generates graphs based on ggplot.
+Imports:
+         dplyr,
+         reshape2,
+         ggplot2,
+         ggpubr,
+         factoextra,
+         FactoMineR,
+         prospectr
+License: use_gpl3_license()
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
+
