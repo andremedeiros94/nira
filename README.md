@@ -1,5 +1,5 @@
 
-# niradm-package: Analysis and graphs of near-infrared
+# niradm-package: Basic analysis of near-infrared data
 
 ## Installation and loading
 
