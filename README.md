@@ -2,9 +2,9 @@
 
 ## Installation and loading
 - install the latest version from GitHub as follow:
-#Install
+`#Install
 if(!require(devtools)) install.packages("devtools")
-devtools::install_github("admedeiros/niradm-package")
+devtools::install_github("admedeiros/niradm-package")`
 
 library(niradm)
 library(niradm)
