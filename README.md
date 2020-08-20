@@ -44,11 +44,52 @@ vizplotraw(nir_seed)
 vizplotmean(nir_seed)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- --> \#\#\# View
+of the exploratory principal component analysis
 
 ``` r
-library(niradm)
 pca(nir_seed,1,2)
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+### Autoscaling and center
+
+``` r
+data(nir_seed)
+dados<-scale_center(nir_seed)
+a<-vizplotmean(nir_seed)
+b<-vizplotmean(dados)
+library(ggpubr)
+```
+
+    ## Loading required package: ggplot2
+
+``` r
+ggarrange(a, b,
+labels = c("A", "B"),
+ncol = 2, nrow = 1)
+```
+
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+### Applying derivatives with Savitzky-Golay smoothing
+
+``` r
+data(nir_seed)
+a<-vizplotmean(nir_seed)
+
+#Applying 1st derivative with Savitzky-Golay smoothing.
+dados<-der_SG(nir_seed,1,2,11)
+b<-vizplotmean(dados)
+
+#Applying 2nd derivative with Savitzky-Golay smoothing.
+dados<-der_SG(nir_seed,2,2,11)
+c<-vizplotmean(dados)
+library(ggpubr)
+ggarrange(a, b, c, 
+labels = c("A", "B", "C"),
+ncol = 2, nrow = 2)
+```
+
+![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
