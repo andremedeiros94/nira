@@ -24,7 +24,7 @@
 #' ncol = 2, nrow = 2)
 #' @export
 #' 
-der_SG<-function(dados,m,p,w){
+der_SG<-function(dados,m=1,p=2,w=11){
 dados1<-as.data.frame(dados[,-ncol(dados)])
 dados1<- savitzkyGolay(dados1,m,p,w)
 dados1<-as.data.frame(dados1)

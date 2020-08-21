@@ -16,7 +16,7 @@
 #' ncol = 2, nrow = 1)
 #' @export
 
-pca<-function(dados,compx,compy) {
+pca<-function(dados,compx = 1,compy= 2 ) {
 dados_pca <- PCA(dados[,-ncol(dados)], graph = FALSE)
 fviz_eig(dados_pca)
 get_eig(dados_pca)
