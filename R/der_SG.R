@@ -25,10 +25,11 @@
 #' @export
 #' 
 der_SG<-function(dados,m=1,p=2,w=11){
+names(dados)[names(dados) == rev(names(dados))[1]] <- 'class'
 dados1<-as.data.frame(dados[,-ncol(dados)])
 dados1<- savitzkyGolay(dados1,m,p,w)
 dados1<-as.data.frame(dados1)
-dados1$class<-as.factor(rev(dados)[1])
+dados1$class<-as.factor(dados$class)
 dados<-dados1
 return(as.data.frame(dados))
 }
