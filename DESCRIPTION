@@ -11,6 +11,7 @@ Imports:
          ggplot2,
          ggpubr,
          factoextra,
+         pls,
          FactoMineR,
          prospectr
 License: use_gpl3_license()
