@@ -11,19 +11,8 @@
 ``` r
 #Install
 if(!require(devtools)) install.packages("devtools")
-```
-
-    ## Loading required package: devtools
-
-    ## Loading required package: usethis
-
-``` r
 if(!require(niradm)) devtools::install_github("admedeiros/niradm-package")
-```
 
-    ## Loading required package: niradm
-
-``` r
 #Load package
 library(niradm)
 ```
@@ -44,8 +33,9 @@ vizplotraw(nir_seed)
 vizplotmean(nir_seed)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- --> \#\#\# View
-of the exploratory principal component analysis
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+### View of the exploratory principal component analysis
 
 ``` r
 pca(nir_seed,1,2)
@@ -57,18 +47,13 @@ pca(nir_seed,1,2)
 
 ``` r
 library(ggpubr) #for ggarrange
-```
-
-    ## Loading required package: ggplot2
-
-``` r
 data(nir_seed)
 dados<-scale_center(nir_seed)
 a<-vizplotmean(nir_seed)
 b<-vizplotmean(dados)
 ggarrange(a, b,
-labels = c("A", "B"),
-ncol = 2, nrow = 1)
+  labels = c("A", "B"),
+  ncol = 2, nrow = 1)
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->

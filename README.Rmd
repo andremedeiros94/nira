@@ -5,7 +5,7 @@ output: github_document
 # niradm-package: Basic analysis of near-infrared data
 ## Installation and loading
 - install the latest version from [GitHub](https://github.com/admedeiros/niradm-package) as follow:
-```{r}
+```{r, message=FALSE}
 #Install
 if(!require(devtools)) install.packages("devtools")
 if(!require(niradm)) devtools::install_github("admedeiros/niradm-package")
@@ -16,7 +16,7 @@ library(niradm)
 
 ## Examples
 ### Spectra Visualization
-```{r  fig.keep='all', fig.width=10, fig.height=5}
+```{r, fig.keep='all', fig.width=10, fig.height=5}
 # raw spectra
 vizplotraw(nir_seed)
 ```
@@ -25,21 +25,22 @@ vizplotraw(nir_seed)
 # mean spectra per class
 vizplotmean(nir_seed)
 ```
+
 ### View of the exploratory principal component analysis
 ```{r  fig.keep='all', fig.width=20, fig.height=5}
 pca(nir_seed,1,2)
 ```
 
 ### Autoscaling and center
-```{r  fig.keep='all', fig.width=20, fig.height=5}
+```{r, message=FALSE, fig.keep='all', fig.width=20, fig.height=5}
 library(ggpubr) #for ggarrange
 data(nir_seed)
 dados<-scale_center(nir_seed)
 a<-vizplotmean(nir_seed)
 b<-vizplotmean(dados)
 ggarrange(a, b,
-labels = c("A", "B"),
-ncol = 2, nrow = 1)
+  labels = c("A", "B"),
+  ncol = 2, nrow = 1)
 ```
 
 ### Applying derivatives with Savitzky-Golay smoothing
