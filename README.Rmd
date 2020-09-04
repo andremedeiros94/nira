@@ -3,6 +3,12 @@ output: github_document
 ---
 
 # niradm-package: Basic analysis of near-infrared data
+
+
+> This package uses functions developed from the following packages: `pls, prospectr, dplyr, reshape2, ggplot2, ggpubr, factoextra,  FactoMineR`. We thank the creators of these useful packages.
+
+>Warning: The package is under development and was made for the specific needs of our laboratory.
+
 ## Installation and loading
 - install the latest version from [GitHub](https://github.com/admedeiros/niradm-package) as follow:
 ```{r, message=FALSE}
