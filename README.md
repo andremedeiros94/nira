@@ -1,5 +1,5 @@
 
-niradm-package: Basic analysis of near-infrared data
+`niradm-package`: Basic analysis of near-infrared data
 ====================================================
 
 > This package uses functions developed from the following packages:
