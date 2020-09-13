@@ -1,5 +1,5 @@
 
-![](C:/Users/medei/OneDrive/Documentos/GitHub/niradm/logo/logo-02.png)
+![](https://raw.githubusercontent.com/admedeiros/niradm-package/master/logo/logo-02.png)
 
 `niradm`: Basic analysis of near-infrared data
 ==============================================
@@ -11,8 +11,10 @@
 **Warning**:
 
 -   The data structure must be in Dataframe format. Use the following
-    command to transform it into a dataframe:
-    `data<-as.data.frame(data)`
+    command to transform it into a dataframe: `as.data.frame()`.
+
+-   The last column must contain the response variable in `factor`
+    or`character` format.
 
 -   The package is under development and was made for the specific needs
     of our laboratory.

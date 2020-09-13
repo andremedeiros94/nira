@@ -15,7 +15,7 @@
 #' @export
 
 center_df <- function (df) {
-  if (! is.data.frame (df)) {stop ("deve ser um data.frame")}
+  if (! is.data.frame (df)) {stop ("must be a dataframe")}
   for (i in 1:NCOL(df)){
     if (is.numeric(df[,i])==TRUE){
       df[,i] = df[,i]-mean(df[,i], na.rm = T) 

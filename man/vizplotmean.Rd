@@ -4,10 +4,10 @@
 \alias{vizplotmean}
 \title{Visualization of raw spectra}
 \usage{
-vizplotmean(dados)
+vizplotmean(df)
 }
 \arguments{
-\item{dados}{data frame with the last column corresponding to the class or group being used.}
+\item{df}{data frame with the last column corresponding to the class or group being used.}
 }
 \description{
 Function to create graphics with NIR spectra
