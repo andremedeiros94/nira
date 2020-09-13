@@ -1,5 +1,5 @@
 
-![](C:/Users/medei/OneDrive/Documentos/GitHub/niradm/logo/logo-02.png)
+![](https://github.com/admedeiros/niradm-package/blob/master/logo/logo-02.png)
 
 `niradm`: Basic analysis of near-infrared data
 ==============================================
