@@ -20,7 +20,7 @@ plotraw_df<-function(df){
   
   ggplot(data=df1,
          aes(x=variable, y=value, group=ordem, colour=class)) + theme_classic()+
-    geom_line()+scale_x_continuous(name ="Spectral Wavenumber(nm)", minor_breaks=2, n.breaks = 4)+
+    geom_line()+scale_x_continuous(name ="Spectral wavelength ", minor_breaks=2, n.breaks = 4)+
     scale_color_manual(name="Class",values=c("green", "violet", "mediumpurple1", "slateblue1", "purple", "purple3",
                                                 "turquoise2", "skyblue", "steelblue", "blue2", "navyblue",
                                                 "orange", "tomato", "coral2", "palevioletred", "violetred"))
