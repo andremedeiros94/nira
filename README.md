@@ -1,5 +1,7 @@
 
-`niradm-package`: Basic analysis of near-infrared data
+![](https://github.com/admedeiros/niradm-package/blob/master/logo/logo-02.png)
+
+`niradm`: Basic analysis of near-infrared data
 ====================================================
 
 > This package uses functions developed from the following packages:
