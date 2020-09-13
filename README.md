@@ -1,10 +1,5 @@
 
-<<<<<<< HEAD
 ![](https://raw.githubusercontent.com/admedeiros/niradm-package/master/logo/logo-02.png)
-=======
-![](https://github.com/admedeiros/niradm-package/blob/master/logo/logo-02.png)
->>>>>>> 6ff6ba32ebfc2db46847af5d05d387b2c03cc446
-
 `niradm`: Basic analysis of near-infrared data
 ==============================================
 
