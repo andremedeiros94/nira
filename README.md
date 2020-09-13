@@ -1,5 +1,6 @@
 
 ![](https://raw.githubusercontent.com/admedeiros/niradm-package/master/logo/logo-02.png)
+
 `niradm`: Basic analysis of near-infrared data
 ==============================================
 
@@ -29,7 +30,6 @@ Installation and loading
     #Install
     if(!require(devtools)) install.packages("devtools")
     if(!require(niradm)) devtools::install_github("admedeiros/niradm-package")
-
     #Load package
     library(niradm)
 
@@ -53,57 +53,61 @@ transformation.
 
 `der_df()`: Applying derivatives with Savitzky-Golay smoothing..
 
-`pca`: Plots a graph of the major component analysis.
+`pca_df()`: Plots a graph of the major component analysis.
 
 Examples
 --------
 
 ### Spectra Visualization
 
+    library(ggpubr) #for ggarrange
+
+    ## Loading required package: ggplot2
+
     # raw spectra
-    vizplotraw(nir_seed)
+    a<-plotraw_df(nir_seed)
+    # mean spectra per class
+    b<-plotmean_df(nir_seed)
+
+    ggarrange(a, b,
+      labels = c("Raw spectra", "Mean spectra"),
+      ncol = 2, nrow = 1)
 
 ![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
-    # mean spectra per class
-    vizplotmean(nir_seed)
+### View of the exploratory principal component analysis
+
+    pca_df(nir_seed,1,2)
 
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
-### View of the exploratory principal component analysis
+### Autoscaling
 
-    pca(nir_seed,1,2)
-
-![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
-
-### Autoscaling and center
-
-    library(ggpubr) #for ggarrange
     data(nir_seed)
-    dados<-scale_center(nir_seed)
-    a<-vizplotmean(nir_seed)
-    b<-vizplotmean(dados)
+    dados<-autoscaling_df(nir_seed)
+    a<-plotmean_df(nir_seed)
+    b<-plotmean_df(dados)
     ggarrange(a, b,
-      labels = c("A", "B"),
+      labels = c("Raw spectra", "Autoscaling spectra"),
       ncol = 2, nrow = 1)
 
-![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 ### Applying derivatives with Savitzky-Golay smoothing
 
     data(nir_seed)
-    a<-vizplotmean(nir_seed)
+    a<-plotmean_df(nir_seed)
 
     #Applying 1st derivative with Savitzky-Golay smoothing.
     dados<-der_SG(nir_seed,1,2,11)
-    b<-vizplotmean(dados)
+    b<-plotmean_df(dados)
 
     #Applying 2nd derivative with Savitzky-Golay smoothing.
     dados<-der_SG(nir_seed,2,2,11)
-    c<-vizplotmean(dados)
+    c<-plotmean_df(dados)
     ggarrange(a, b, c, 
-    labels = c("A", "B", "C"),
-    ncol = 2, nrow = 2,  widths = 15,
+    labels = c("Raw spectra", "1st derivative", "2nd derivative"),
+    ncol = 3, nrow = 1,  widths = 15,
       heights = 10)
 
-![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
