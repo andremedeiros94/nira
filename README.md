@@ -1,8 +1,8 @@
 
 ![](https://raw.githubusercontent.com/admedeiros/niradm-package/master/logo/logo-02.png)
 
-`niradm`: Basic analysis of near-infrared data
-==============================================
+`niradm`: Near-infrared data analysis
+=====================================
 
 > This package uses functions developed from the following packages:
 > `pls, prospectr, dplyr, reshape2, ggplot2, ggpubr, factoextra,  FactoMineR`.
