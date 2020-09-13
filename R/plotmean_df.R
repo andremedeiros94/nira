@@ -2,15 +2,15 @@
 #' @description Function to create graphics with NIR spectra
 #' @param df data frame with the last column corresponding to the class or group being used.
 #' @details Call files with check.name = T. The name of the spectrum variables must be numeric.
-#' @usage vizplotmean(df)
+#' @usage plotmean_df(df)
 #' @import dplyr 
 #' @import reshape2 
 #' @import ggplot2
 #' @examples
 #' data(nir_seed)
-#' vizplotmean(nir_seed)
+#' plotmean_df(nir_seed)
 #' @export
-vizplotmean<-function(df){
+plotmean_df<-function(df){
   if (! is.data.frame (df)) {stop ("must be a dataframe")}
   names(df)[names(df) == rev(names(df))[1]] <- 'class' #nomeando a última variável como class
   df$class<-as.factor(df$class) #Transformando em fator

@@ -6,8 +6,8 @@
 #' @examples
 #' data(nir_seed)
 #' dados<-center_df(nir_seed)
-#' a<-vizplotmean(nir_seed)
-#' b<-vizplotmean(dados)
+#' a<-plotmean_df(nir_seed)
+#' b<-plotmean_df(dados)
 #' library(ggpubr)
 #' ggarrange(a, b,
 #' labels = c("A", "B"),

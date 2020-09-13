@@ -2,15 +2,15 @@
 #' @description Function to create graphics with NIR spectra
 #' @param df data frame with the last column corresponding to the class or group being used.
 #' @details Call files with check.name = T. The name of the spectrum variables must be numeric.
-#' @usage vizplotraw(df)
+#' @usage plotraw_df(df)
 #' @import dplyr 
 #' @import reshape2 
 #' @import ggplot2
 #' @examples
 #' data(nir_seed)
-#' vizplotraw(nir_seed)
+#' plotraw_df(nir_seed)
 #' @export
-vizplotraw<-function(df){
+plotraw_df<-function(df){
   if (! is.data.frame (df)) {stop ("must be a dataframe")}
   names(df)[names(df) == rev(names(df))[1]] <- 'class'
   df$class<-as.factor(df$class)

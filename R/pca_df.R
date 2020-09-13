@@ -2,7 +2,7 @@
 #' @description Function for data pre-treatment.
 #' @param df data frame with the last column corresponding to the class or group being used.
 #' @param axes a numeric vector of length 2 specifying the dimensions to be plotted.
-#' @usage scale_center(df)
+#' @usage pca_df(df)
 #' @import factoextra
 #' @import FactoMineR
 #' @examples

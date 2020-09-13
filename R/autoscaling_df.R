@@ -6,8 +6,8 @@
 #' @examples
 #' data(nir_seed)
 #' df<-autoscaling_df(nir_seed)
-#' a<-vizplotmean(nir_seed)
-#' b<-vizplotmean(df)
+#' a<-plotmean_df(nir_seed)
+#' b<-plotmean_df(df)
 #' library(ggpubr)
 #' ggarrange(a, b,
 #' labels = c("A", "B"),
