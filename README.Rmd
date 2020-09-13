@@ -4,7 +4,9 @@ output: github_document
 ![](https://raw.githubusercontent.com/admedeiros/niradm-package/master/logo/logo-02.png)
 
 # `niradm`: Near-infrared data analysis
-Author: M.Sc André Dantas de Medeiros (Universidade Federal de viçosa). Email: andre.d.medeiros@ufv.br
+*Last update: 13.09.2020*
+
+*Author: M.Sc André Dantas de Medeiros (Universidade Federal de viçosa). Email: andre.d.medeiros@ufv.br*
 
 > This package uses functions developed from the following packages: `pls, prospectr, dplyr, reshape2, ggplot2, ggpubr, factoextra,  FactoMineR`. We thank the creators of these useful packages.
 
