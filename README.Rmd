@@ -1,13 +1,19 @@
 ---
 output: github_document
 ---
+![](C:/Users/medei/OneDrive/Documentos/GitHub/niradm/logo/logo-02.png)
 
-# niradm-package: Basic analysis of near-infrared data
+# `niradm`: Basic analysis of near-infrared data
 
 
 > This package uses functions developed from the following packages: `pls, prospectr, dplyr, reshape2, ggplot2, ggpubr, factoextra,  FactoMineR`. We thank the creators of these useful packages.
 
->Warning: The package is under development and was made for the specific needs of our laboratory.
+**Warning**:
+
+* The data structure must be in Dataframe format. Use the following command to transform it into a dataframe: `data<-as.data.frame(data)`
+
+* The package is under development and was made for the specific needs of our laboratory.
+  
 
 ## Installation and loading
 - install the latest version from [GitHub](https://github.com/admedeiros/niradm-package) as follow:
@@ -19,6 +25,23 @@ if(!require(niradm)) devtools::install_github("admedeiros/niradm-package")
 #Load package
 library(niradm)
 ```
+## Main functions:
+`vizplotmean_df()`: Create graphics with the average of the spectra class.
+
+`vizplotraw_df()`: Create graphics with the raw of the spectra class.
+
+`center_df()`: Center the data on the average.
+
+`autoscaling_df()`: Autoscaling the data using the Z-score transformation.
+
+`snv_df()`: Standard Normal Variate (SNV) on near-infrared (NIR) data.
+
+`msc_df()`: Multiplicative Scatter Correction (MSC) on near-infrared (NIR) data.
+
+`der_df()`: Applying derivatives with Savitzky-Golay smoothing..
+
+`pca`: Plots a graph of the major component analysis.
+
 
 ## Examples
 ### Spectra Visualization
