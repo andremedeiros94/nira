@@ -4,6 +4,10 @@
 `niradm`: Near-infrared data analysis
 =====================================
 
+Author: M.Sc André Dantas de Medeiros (Universidade Federal de viçosa).
+Email:
+<a href="mailto:andre.d.medeiros@ufv.br" class="email">andre.d.medeiros@ufv.br</a>
+
 > This package uses functions developed from the following packages:
 > `pls, prospectr, dplyr, reshape2, ggplot2, ggpubr, factoextra,  FactoMineR`.
 > We thank the creators of these useful packages.
