@@ -53,7 +53,7 @@ transformation.
 
 `der_df()`: Applying derivatives with Savitzky-Golay smoothing..
 
-`pca`: Plots a graph of the major component analysis.
+`pca_df()`: Plots a graph of the major component analysis.
 
 Examples
 --------
