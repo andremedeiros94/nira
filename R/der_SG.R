@@ -1,6 +1,6 @@
 #' @title Applying derivatives with Savitzky-Golay smoothing
 #' @description Function for data pre-treatment.
-#' @param df data frame with the last column corresponding to the class or group being used.
+#' @param df data frame with the last column corresponding to the class or group being used
 #' @param m the differentiation order.
 #' @param p the polynomial order.
 #' @param w a window size (must be odd).
