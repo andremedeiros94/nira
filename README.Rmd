@@ -26,11 +26,20 @@ output: github_document
 ```{r, message=FALSE, warning=FALSE}
 #Install
 if(!require(devtools)) install.packages("devtools")
+#if(require(niradm)) remove.packages("niradm")
+#.rs.restartR()
 if(!require(niradm)) devtools::install_github("admedeiros/niradm-package")
 #Load package
 
 library(niradm)
 ```
+
+```{r}
+devtools::install_github("hrbrmstr/dtupdate")
+library(dtupdate)
+github_update()
+```
+
 ## Main functions:
 `import_csv()`: Import and merge CSV NIR files
 
@@ -52,7 +61,7 @@ library(niradm)
 
 `classification_df()`: Function to develop classification models
 
-`load_classifier_df()`:function to load and apply classifier created with the classification_df function
+`load_classifier_df()`: Function to load and apply classifier created with the classification_df function
 
 
 ## Examples

@@ -35,6 +35,7 @@ Installation and loading
 
     #Install
     if(!require(devtools)) install.packages("devtools")
+    if(!require(niradm)) remove.packages("niradm")
     if(!require(niradm)) devtools::install_github("admedeiros/niradm-package")
     #Load package
 
@@ -65,7 +66,7 @@ transformation.
 
 `classification_df()`: Function to develop classification models
 
-`load_classifier_df()`:function to load and apply classifier created
+`load_classifier_df()`: Function to load and apply classifier created
 with the classification\_df function
 
 Examples
