@@ -46,9 +46,11 @@ For package update
 ------------------
 
     if(!require(devtools)) install.packages("devtools")
-    if(require(niradm))) remove.packages("niradm")
+    if(require(niradm)) remove.packages("niradm")
     .rs.restartR()
     if(!require(niradm)) devtools::install_github("admedeiros/niradm")
+
+    library(niradm)
 
 Main functions:
 ---------------
