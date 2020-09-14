@@ -64,6 +64,8 @@ transformation.
 
 `pca_df()`: Plots a graph of the principal component analysis.
 
+`classification_df()`: Function to develop classification models
+
 Examples
 --------
 
