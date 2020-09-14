@@ -4,7 +4,7 @@
 `niradm`: Near-infrared data analysis
 =====================================
 
-*Last update: 13.09.2020*
+*Last update: 14.09.2020*
 
 *Author: M.Sc André Dantas de Medeiros (Universidade Federal de viçosa).
 Email:
@@ -64,6 +64,9 @@ transformation.
 `pca_df()`: Plots a graph of the principal component analysis.
 
 `classification_df()`: Function to develop classification models
+
+`load_classifier_df()`:function to load and apply classifier created
+with the classification\_df function
 
 Examples
 --------
