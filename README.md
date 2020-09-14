@@ -43,9 +43,10 @@ Installation and loading
 For package update
 ------------------
 
-    if(!require(dtupdate)) devtools::install_github("hrbrmstr/dtupdate")
-    library(dtupdate)
-    github_update()
+    if(!require(devtools)) install.packages("devtools")
+    if(require(niradm))) remove.packages("niradm")
+    .rs.restartR()
+    if(!require(niradm)) devtools::install_github("admedeiros/niradm-package")
 
 Main functions:
 ---------------
