@@ -22,6 +22,8 @@ Email:
 -   The last column must contain the response variable in `factor`
     or`character` format.
 
+-   
+
 -   The package is under development and was made for the specific needs
     of our laboratory.
 
@@ -35,7 +37,7 @@ Installation and loading
 
     #Install
     if(!require(devtools)) install.packages("devtools")
-    if(!require(niradm)) devtools::install_github("admedeiros/niradm-package")
+    if(!require(niradm)) devtools::install_github("admedeiros/niradm")
 
     #Load package
     library(niradm)
@@ -46,7 +48,7 @@ For package update
     if(!require(devtools)) install.packages("devtools")
     if(require(niradm))) remove.packages("niradm")
     .rs.restartR()
-    if(!require(niradm)) devtools::install_github("admedeiros/niradm-package")
+    if(!require(niradm)) devtools::install_github("admedeiros/niradm")
 
 Main functions:
 ---------------
