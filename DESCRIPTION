@@ -1,6 +1,6 @@
 Package: niradm
 Title: Analysis and graphics and near infrared spectra.
-Version: 0.0.9
+Version: 0.1.0
 Authors@R: 
     person("Andre Dantas de","Medeiros", email = "andre.d.medeiros@ufv.br",role = c("aut","cre"))
 Description: Package for data analysis of near infrared spectra. 
