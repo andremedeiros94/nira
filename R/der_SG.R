@@ -11,11 +11,11 @@
 #' data(nir_seed)
 #' a<-plotmean_df(nir_seed)
 #' 
-#' #Applying 1st derivative with Savitzky-Golay smoothing.
+#' #Applying 1st derivative with Savitzky-Golay smoothing
 #' df<-der_SG(nir_seed,1,2,11)
 #' b<-plotmean_df(df)
 #' 
-#' #Applying 2nd derivative with Savitzky-Golay smoothing.
+#' #Applying 2nd derivative with Savitzky-Golay smoothing
 #' df<-der_SG(nir_seed,2,2,11)
 #' c<-plotmean_df(df)
 #' library(ggpubr)
