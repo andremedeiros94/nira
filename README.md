@@ -35,11 +35,17 @@ Installation and loading
 
     #Install
     if(!require(devtools)) install.packages("devtools")
-    if(!require(niradm)) remove.packages("niradm")
     if(!require(niradm)) devtools::install_github("admedeiros/niradm-package")
-    #Load package
 
+    #Load package
     library(niradm)
+
+For package update
+------------------
+
+    if(!require(dtupdate)) devtools::install_github("hrbrmstr/dtupdate")
+    library(dtupdate)
+    github_update()
 
 Main functions:
 ---------------
@@ -87,13 +93,13 @@ Examples
       labels = c("Raw spectra", "Mean spectra"),
       ncol = 2, nrow = 1)
 
-![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
 ### View of the exploratory principal component analysis
 
     pca_df(nir_seed,1,2)
 
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 ### Autoscaling
 
@@ -105,7 +111,7 @@ Examples
       labels = c("Raw spectra", "Autoscaling spectra"),
       ncol = 2, nrow = 1)
 
-![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ### Applying derivatives with Savitzky-Golay smoothing
 
@@ -124,4 +130,4 @@ Examples
     ncol = 3, nrow = 1,  widths = 15,
       heights = 10)
 
-![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
