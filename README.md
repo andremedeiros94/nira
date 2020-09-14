@@ -11,7 +11,7 @@ Email:
 <a href="mailto:andre.d.medeiros@ufv.br" class="email">andre.d.medeiros@ufv.br</a>*
 
 > This package uses functions developed from the following packages:
-> `pls, prospectr, dplyr, reshape2, ggplot2, ggpubr, factoextra,  FactoMineR`.
+> `pls, prospectr, dplyr, reshape2, ggplot2, ggpubr, factoextra,  FactoMineR, readxl, plyr, caret, e1071`.
 > We thank the creators of these useful packages.
 
 **Warning**:
