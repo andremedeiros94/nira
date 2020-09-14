@@ -52,6 +52,8 @@ library(niradm)
 
 `classification_df()`: Function to develop classification models
 
+`load_classifier_df()`:function to load and apply classifier created with the classification_df function
+
 
 ## Examples
 ### Spectra Visualization
