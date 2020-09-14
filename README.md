@@ -36,6 +36,34 @@ Installation and loading
     #Install
     if(!require(devtools)) install.packages("devtools")
     if(!require(niradm)) devtools::install_github("admedeiros/niradm-package")
+
+    ## Warning: replacing previous import 'dplyr::failwith' by 'plyr::failwith' when
+    ## loading 'niradm'
+
+    ## Warning: replacing previous import 'dplyr::id' by 'plyr::id' when loading
+    ## 'niradm'
+
+    ## Warning: replacing previous import 'dplyr::summarize' by 'plyr::summarize' when
+    ## loading 'niradm'
+
+    ## Warning: replacing previous import 'dplyr::count' by 'plyr::count' when loading
+    ## 'niradm'
+
+    ## Warning: replacing previous import 'dplyr::desc' by 'plyr::desc' when loading
+    ## 'niradm'
+
+    ## Warning: replacing previous import 'ggpubr::mutate' by 'plyr::mutate' when
+    ## loading 'niradm'
+
+    ## Warning: replacing previous import 'dplyr::arrange' by 'plyr::arrange' when
+    ## loading 'niradm'
+
+    ## Warning: replacing previous import 'dplyr::rename' by 'plyr::rename' when
+    ## loading 'niradm'
+
+    ## Warning: replacing previous import 'dplyr::summarise' by 'plyr::summarise' when
+    ## loading 'niradm'
+
     #Load package
 
     library(niradm)
@@ -43,8 +71,10 @@ Installation and loading
 Main functions:
 ---------------
 
-`import_csv()`: Import and merge CSV NIR files `vizplotmean_df()`:
-Create graphics with the average of the spectra class.
+`import_csv()`: Import and merge CSV NIR files
+
+`vizplotmean_df()`: Create graphics with the average of the spectra
+class.
 
 `vizplotraw_df()`: Create graphics with the raw of the spectra class.
 
