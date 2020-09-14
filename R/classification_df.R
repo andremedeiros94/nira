@@ -37,6 +37,8 @@ classification_df<-function(df,splitting=0.7,algorithm="kernelpls",method_cv="re
                 method = algorithm,
                 tuneLength = 10,
                 trControl = fitControl);
+  
+  save(model, file="model.Rdata")
   a<-model
   
   

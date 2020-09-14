@@ -34,9 +34,9 @@ library(niradm)
 ## Main functions:
 `import_csv()`: Import and merge CSV NIR files
 
-`vizplotmean_df()`: Create graphics with the average of the spectra class.
+`plotmean_df()`: Create graphics with the average of the spectra class.
 
-`vizplotraw_df()`: Create graphics with the raw of the spectra class.
+`plotraw_df()`: Create graphics with the raw of the spectra class.
 
 `center_df()`: Center the data on the average.
 
