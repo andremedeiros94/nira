@@ -2,7 +2,7 @@
 #' @description Import and merge CSV NIR files
 #' @param directory Enter working directory address.
 #' @usage import_csv(directory)
-#' @import plyr
+#' @import dplyr
 #' @import readxl
 #' @export
 #' 
