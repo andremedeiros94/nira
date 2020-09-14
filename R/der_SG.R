@@ -1,6 +1,6 @@
 #' @title Applying derivatives with Savitzky-Golay smoothing
 #' @description Function for data pre-treatment.
-#' @param df data frame with the last column corresponding to the class or group being used.
+#' @param df data frame with the last column corresponding to the class or group being used
 #' @param m the differentiation order.
 #' @param p the polynomial order.
 #' @param w a window size (must be odd).
@@ -11,11 +11,11 @@
 #' data(nir_seed)
 #' a<-plotmean_df(nir_seed)
 #' 
-#' #Applying 1st derivative with Savitzky-Golay smoothing.
+#' #Applying 1st derivative with Savitzky-Golay smoothing
 #' df<-der_SG(nir_seed,1,2,11)
 #' b<-plotmean_df(df)
 #' 
-#' #Applying 2nd derivative with Savitzky-Golay smoothing.
+#' #Applying 2nd derivative with Savitzky-Golay smoothing
 #' df<-der_SG(nir_seed,2,2,11)
 #' c<-plotmean_df(df)
 #' library(ggpubr)
