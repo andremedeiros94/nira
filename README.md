@@ -22,8 +22,6 @@ Email:
 -   The last column must contain the response variable in `factor`
     or`character` format.
 
--   
-
 -   The package is under development and was made for the specific needs
     of our laboratory.
 
