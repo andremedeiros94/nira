@@ -43,8 +43,8 @@ Installation and loading
 Main functions:
 ---------------
 
-`vizplotmean_df()`: Create graphics with the average of the spectra
-class.
+`import_csv()`: Import and merge CSV NIR files `vizplotmean_df()`:
+Create graphics with the average of the spectra class.
 
 `vizplotraw_df()`: Create graphics with the raw of the spectra class.
 
