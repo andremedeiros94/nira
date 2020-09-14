@@ -23,7 +23,7 @@ output: github_document
 
 ## Installation and loading
 - install the latest version from [GitHub](https://github.com/admedeiros/niradm-package) as follow:
-```{r, message=FALSE}
+```{r, message=FALSE, warning=FALSE}
 #Install
 if(!require(devtools)) install.packages("devtools")
 if(!require(niradm)) devtools::install_github("admedeiros/niradm-package")
