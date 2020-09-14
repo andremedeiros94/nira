@@ -37,6 +37,7 @@ Installation and loading
     if(!require(devtools)) install.packages("devtools")
     if(!require(niradm)) devtools::install_github("admedeiros/niradm-package")
     #Load package
+
     library(niradm)
 
 Main functions:
