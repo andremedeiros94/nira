@@ -6,7 +6,7 @@
 #' @import ggpubr
 #' @export
 #' 
-msc_pt<-function(dados){
+msc_df<-function(dados){
   names(dados)[names(dados) == rev(names(dados))[1]] <- 'class'
   dados1<-as.data.frame(dados[,-ncol(dados)])
   dados1<- msc(as.matrix(dados1))
