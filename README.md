@@ -1,8 +1,8 @@
 
-![](https://raw.githubusercontent.com/admedeiros/niradm-package/master/logo/logo-02.png)
+![](https://raw.githubusercontent.com/admedeiros/nira/master/logo/logo-01.png)
 
-`niradm`: Near-infrared data analysis
-=====================================
+`nira`: Near-infrared data analysis
+===================================
 
 *Last update: 14.09.2020*
 
@@ -29,26 +29,17 @@ Installation and loading
 ------------------------
 
 -   install the latest version from
-    [GitHub](https://github.com/admedeiros/niradm-package) as follow:
-
-<!-- -->
-
-    #Install
-    if(!require(devtools)) install.packages("devtools")
-    if(!require(niradm)) devtools::install_github("admedeiros/niradm")
-
-    #Load package
-    library(niradm)
+    [GitHub](https://github.com/admedeiros/nira) as follow:
 
 For package update
 ------------------
 
     if(!require(devtools)) install.packages("devtools")
-    if(require(niradm)) remove.packages("niradm")
+    if(require(nira)) remove.packages("nira")
     .rs.restartR()
-    if(!require(niradm)) devtools::install_github("admedeiros/niradm")
-
-    library(niradm)
+    if(!require(nira)) devtools::install_github("admedeiros/nira")
+    #Load package
+    library(nira)
 
 Main functions:
 ---------------

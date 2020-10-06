@@ -23,7 +23,7 @@ output: github_document
 
 ## Installation and loading
 - install the latest version from [GitHub](https://github.com/admedeiros/nira) as follow:
-```{r, message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE, include=FALSE}
 #Install
 if(!require(devtools)) install.packages("devtools")
 if(!require(nira)) devtools::install_github("admedeiros/nira")
@@ -69,7 +69,7 @@ library(nira)
 
 ## Examples
 ### Spectra Visualization
-```{r, fig.keep='all', fig.width=15, fig.height=5,include=FALSE}
+```{r, fig.keep='all', fig.width=15, fig.height=5}
 library(ggpubr) #for ggarrange
 # raw spectra
 a<-plotraw_df(nir_seed)
@@ -83,12 +83,12 @@ ggarrange(a, b,
 
 
 ### View of the exploratory principal component analysis
-```{r  fig.keep='all', fig.width=20, fig.height=5,include=FALSE}
+```{r  fig.keep='all', fig.width=20, fig.height=5}
 pca_df(nir_seed,1,2)
 ```
 
 ### Autoscaling
-```{r, message=FALSE, fig.keep='all', fig.width=20, fig.height=5,include=FALSE}
+```{r, message=FALSE, fig.keep='all', fig.width=20, fig.height=5}
 data(nir_seed)
 dados<-autoscaling_df(nir_seed)
 a<-plotmean_df(nir_seed)
@@ -99,7 +99,7 @@ ggarrange(a, b,
 ```
 
 ### Applying derivatives with Savitzky-Golay smoothing
-```{r  fig.keep='all', fig.width=20, fig.height=5,include=FALSE}
+```{r  fig.keep='all', fig.width=20, fig.height=5}
 data(nir_seed)
 a<-plotmean_df(nir_seed)
 
