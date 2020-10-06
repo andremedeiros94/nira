@@ -1,9 +1,9 @@
 ---
 output: github_document
 ---
-![](https://raw.githubusercontent.com/admedeiros/niradm-package/master/logo/logo-02.png)
+![](https://raw.githubusercontent.com/admedeiros/nira/master/logo/logo.png)
 
-# `niradm`: Near-infrared data analysis
+# `nira`: Near-infrared data analysis
 *Last update: 14.09.2020*
 
 *Author: M.Sc André Dantas de Medeiros (Universidade Federal de viçosa). Email: andre.d.medeiros@ufv.br*
@@ -22,25 +22,25 @@ output: github_document
   
 
 ## Installation and loading
-- install the latest version from [GitHub](https://github.com/admedeiros/niradm-package) as follow:
-```{r, message=FALSE, warning=FALSE}
+- install the latest version from [GitHub](https://github.com/admedeiros/nira) as follow:
+```{r, message=FALSE, warning=FALSE, include=FALSE}
 #Install
 if(!require(devtools)) install.packages("devtools")
-if(!require(niradm)) devtools::install_github("admedeiros/niradm")
+if(!require(nira)) devtools::install_github("admedeiros/nira")
 
 #Load package
-library(niradm)
+library(nira)
 ```
 
 ## For package update
-```{r eval=FALSE, message=FALSE, warning=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE,include=FALSE}
 
 if(!require(devtools)) install.packages("devtools")
-if(require(niradm)) remove.packages("niradm")
+if(require(niradm)) remove.packages("nira")
 .rs.restartR()
-if(!require(niradm)) devtools::install_github("admedeiros/niradm")
+if(!require(nira)) devtools::install_github("admedeiros/nira")
 
-library(niradm)
+library(nira)
 ```
 
 ## Main functions:
@@ -69,7 +69,7 @@ library(niradm)
 
 ## Examples
 ### Spectra Visualization
-```{r, fig.keep='all', fig.width=15, fig.height=5}
+```{r, fig.keep='all', fig.width=15, fig.height=5,include=FALSE}
 library(ggpubr) #for ggarrange
 # raw spectra
 a<-plotraw_df(nir_seed)
@@ -83,12 +83,12 @@ ggarrange(a, b,
 
 
 ### View of the exploratory principal component analysis
-```{r  fig.keep='all', fig.width=20, fig.height=5}
+```{r  fig.keep='all', fig.width=20, fig.height=5,include=FALSE}
 pca_df(nir_seed,1,2)
 ```
 
 ### Autoscaling
-```{r, message=FALSE, fig.keep='all', fig.width=20, fig.height=5}
+```{r, message=FALSE, fig.keep='all', fig.width=20, fig.height=5,include=FALSE}
 data(nir_seed)
 dados<-autoscaling_df(nir_seed)
 a<-plotmean_df(nir_seed)
@@ -99,7 +99,7 @@ ggarrange(a, b,
 ```
 
 ### Applying derivatives with Savitzky-Golay smoothing
-```{r  fig.keep='all', fig.width=20, fig.height=5}
+```{r  fig.keep='all', fig.width=20, fig.height=5,include=FALSE}
 data(nir_seed)
 a<-plotmean_df(nir_seed)
 
