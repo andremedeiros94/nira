@@ -1,7 +1,7 @@
 ---
 output: github_document
 ---
-![](https://raw.githubusercontent.com/admedeiros/nira/master/logo/logo.png)
+![](https://raw.githubusercontent.com/admedeiros/nira/master/logo/logo-01.png)
 
 # `nira`: Near-infrared data analysis
 *Last update: 14.09.2020*
@@ -23,7 +23,7 @@ output: github_document
 
 ## Installation and loading
 - install the latest version from [GitHub](https://github.com/admedeiros/nira) as follow:
-```{r, message=FALSE, warning=FALSE, include=FALSE}
+```{r, message=FALSE, warning=FALSE}
 #Install
 if(!require(devtools)) install.packages("devtools")
 if(!require(nira)) devtools::install_github("admedeiros/nira")
@@ -33,13 +33,13 @@ library(nira)
 ```
 
 ## For package update
-```{r eval=FALSE, message=FALSE, warning=FALSE,include=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE}
 
 if(!require(devtools)) install.packages("devtools")
-if(require(niradm)) remove.packages("nira")
+if(require(nira)) remove.packages("nira")
 .rs.restartR()
 if(!require(nira)) devtools::install_github("admedeiros/nira")
-
+#Load package
 library(nira)
 ```
 

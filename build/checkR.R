@@ -6,4 +6,3 @@ check_man()
 document()
 check()
 build()
-
