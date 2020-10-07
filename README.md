@@ -78,9 +78,6 @@ transformation.
 `load_classifier_df()`: Function to load and apply classifier created
 with the classification\_df function
 
-`plsplot()`: Function to plot classification created with the
-classification\_df function
-
 Examples
 --------
 
