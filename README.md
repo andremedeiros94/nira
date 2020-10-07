@@ -31,6 +31,15 @@ Installation and loading
 -   install the latest version from
     [GitHub](https://github.com/admedeiros/nira) as follow:
 
+<!-- -->
+
+    #Install
+    if(!require(devtools)) install.packages("devtools")
+    if(!require(nira)) devtools::install_github("admedeiros/nira")
+
+    #Load package
+    library(nira)
+
 For package update
 ------------------
 
@@ -69,10 +78,21 @@ transformation.
 `load_classifier_df()`: Function to load and apply classifier created
 with the classification\_df function
 
+`plsplot()`: Function to plot classification created with the
+classification\_df function
+
 Examples
 --------
 
 ### Spectra Visualization
+
+    library(nira)
+
+    ## Warning: replacing previous import 'caret::R2' by 'pls::R2' when loading 'nira'
+
+    ## nira version 0.1.0
+
+    ## check the github repository at https://github.com/admedeiros/nira
 
     library(ggpubr) #for ggarrange
 

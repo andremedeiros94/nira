@@ -17,7 +17,16 @@
 #' dados<-classification_df(nir_seed)
 #' @export
 
-classification_df<-function(df,splitting=0.7,algorithm="kernelpls",method_cv="repeatedcv",number_cv = 10,repeats_cv=3, tL = 10, save=T, varimp=T, plsplot=T){
+classification_df<-function(df,
+                            splitting=0.7,
+                            algorithm="kernelpls",
+                            method_cv="repeatedcv",
+                            number_cv = 10,
+                            repeats_cv=3, 
+                            tL = 10, 
+                            save=T, 
+                            varimp=T,
+                            plsplot=T){
   
   set.seed(7)
   trainIndex <- createDataPartition(df[,length(df)], p = splitting, 
@@ -66,7 +75,7 @@ classification_df<-function(df,splitting=0.7,algorithm="kernelpls",method_cv="re
     
     plot<-ggplot(comp, aes(x=V1,y=V2, color= class, shape = class)) + geom_point(size=3, alpha = 0.5)+
       labs(x = "Comp 1",
-           y = "Comp 2")+ theme_light ()+ stat_ellipse(level = 0.90,geom = "polygon", alpha = 0.1, aes(fill = class))}
+           y = "Comp 2")+ theme_light ()+ stat_ellipse(level = 0.90, geom = "polygon", alpha = 0.1, aes(fill = class))}
   
   
   mylist<-list("Cross-validation"=a,"Training_results"=b,"Testing_results"=c, "Variable importance"=imp, "plsplot"=plot)

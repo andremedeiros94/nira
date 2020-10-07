@@ -23,7 +23,7 @@ output: github_document
 
 ## Installation and loading
 - install the latest version from [GitHub](https://github.com/admedeiros/nira) as follow:
-```{r, message=FALSE, warning=FALSE, include=FALSE}
+```{r, message=FALSE, warning=FALSE, eval=FALSE}
 #Install
 if(!require(devtools)) install.packages("devtools")
 if(!require(nira)) devtools::install_github("admedeiros/nira")
@@ -71,6 +71,7 @@ library(nira)
 ## Examples
 ### Spectra Visualization
 ```{r, fig.keep='all', fig.width=15, fig.height=5}
+library(nira)
 library(ggpubr) #for ggarrange
 # raw spectra
 a<-plotraw_df(nir_seed)
