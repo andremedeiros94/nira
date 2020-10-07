@@ -66,6 +66,7 @@ library(nira)
 
 `load_classifier_df()`: Function to load and apply classifier created with the classification_df function
 
+`plsplot()`: Function to plot classification created with the classification_df function
 
 ## Examples
 ### Spectra Visualization

@@ -17,6 +17,12 @@ classification_df(df)
 
 \item{number_cv}{Either the number of folds or number of resampling iterations}
 
+\item{tL}{tuneLength}
+
+\item{save}{Salvar modelo}
+
+\item{plsplot}{Plotar PLS}
+
 \item{repeat_cv}{For repeated k-fold cross-validation only: the number of complete sets of folds to compute}
 }
 \description{

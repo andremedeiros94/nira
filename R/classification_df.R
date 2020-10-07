@@ -6,6 +6,9 @@
 #' @param method_cv The resampling method: "boot", "boot632", "optimism_boot", "boot_all", "cv", "repeatedcv", "LOOCV", "LGOCV"
 #' @param number_cv Either the number of folds or number of resampling iterations
 #' @param repeat_cv For repeated k-fold cross-validation only: the number of complete sets of folds to compute
+#' @param tL tuneLength
+#' @param save Salvar modelo
+#' @param plsplot Plotar PLS
 #' @usage classification_df(df)
 #' @import caret
 #' @import e1071
@@ -14,7 +17,7 @@
 #' dados<-classification_df(nir_seed)
 #' @export
 
-classification_df<-function(df,splitting=0.7,algorithm="kernelpls",method_cv="repeatedcv",number_cv = 10,repeats_cv=3, save=T){
+classification_df<-function(df,splitting=0.7,algorithm="kernelpls",method_cv="repeatedcv",number_cv = 10,repeats_cv=3, tL = 10, save=T, varimp=T, plsplot=T){
   
   set.seed(7)
   trainIndex <- createDataPartition(df[,length(df)], p = splitting, 
@@ -35,7 +38,7 @@ classification_df<-function(df,splitting=0.7,algorithm="kernelpls",method_cv="re
   model = train(base_treinamento[,-length(df)],
                 base_treinamento[,length(df)],
                 method = algorithm,
-                tuneLength = 10,
+                tuneLength = tL,
                 trControl = fitControl);
   a<-model
   
@@ -51,7 +54,22 @@ classification_df<-function(df,splitting=0.7,algorithm="kernelpls",method_cv="re
   results_test<-confusionMatrix(matriz_confusao)
   c<-results_test
   
-  mylist<-list("Cross-validation"=a,"Training_results"=b,"Testing_results"=c)
+  if (varimp==T) imp<-varImp(model, scale=TRUE)
+  
+  if (plsplot==T){
+    Scores <- a$finalModel$scores
+    Scores<-as.matrix.data.frame(Scores)
+    Scores<-as.data.frame(Scores)
+    
+    class<-base_treinamento[,length(base_treinamento)]
+    comp<-cbind(Scores,class)
+    
+    plot<-ggplot(comp, aes(x=V1,y=V2, color= class, shape = class)) + geom_point(size=3, alpha = 0.5)+
+      labs(x = "Comp 1",
+           y = "Comp 2")+ theme_light ()+ stat_ellipse(level = 0.90,geom = "polygon", alpha = 0.1, aes(fill = class))}
+  
+  
+  mylist<-list("Cross-validation"=a,"Training_results"=b,"Testing_results"=c, "Variable importance"=imp, "plsplot"=plot)
   return(mylist)
 }
 
