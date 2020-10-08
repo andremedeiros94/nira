@@ -87,7 +87,6 @@ f<-plotmean_df(autoscaling_df(nir_seed))
 g<-plotraw_df(snv_df(nir_seed))
 h<-plotmean_df(snv_df(nir_seed))
 # MSC
-msc_df(nir_seed)
 i<-plotraw_df(msc_df(nir_seed))
 j<-plotmean_df(msc_df(nir_seed))
 # 1st derivative with Savitzky-Golay smoothing
@@ -104,36 +103,25 @@ ggarrange(a, b,c,d,e,f,g,h,i,j,k,l,m,n,
 
 
 ### View of the exploratory principal component analysis
-```{r  fig.keep='all', fig.width=20, fig.height=5}
+```{r  fig.keep='all', fig.width=10, fig.height=5}
 pca_df(nir_seed,1,2)
 ```
 
-### Autoscaling
-```{r, message=FALSE, fig.keep='all', fig.width=20, fig.height=5}
+### Classification
+```{r, message=FALSE, fig.keep='all', fig.width=10, fig.height=7}
 data(nir_seed)
-dados<-autoscaling_df(nir_seed)
-a<-plotmean_df(nir_seed)
-b<-plotmean_df(dados)
-ggarrange(a, b,
-  labels = c("Raw spectra", "Autoscaling spectra"),
-  ncol = 2, nrow = 1)
+classification_df(nir_seed,metrics = 2)
 ```
 
-### Applying derivatives with Savitzky-Golay smoothing
-```{r  fig.keep='all', fig.width=20, fig.height=5}
+### Load the pre-trained model and validate their performance in external labeled data.
+```{r  fig.keep='all', fig.width=5, fig.height=5}
 data(nir_seed)
-a<-plotmean_df(nir_seed)
-
-#Applying 1st derivative with Savitzky-Golay smoothing.
-dados<-der_SG(nir_seed,1,2,11)
-b<-plotmean_df(dados)
-
-#Applying 2nd derivative with Savitzky-Golay smoothing.
-dados<-der_SG(nir_seed,2,2,11)
-c<-plotmean_df(dados)
-ggarrange(a, b, c, 
-labels = c("Raw spectra", "1st derivative", "2nd derivative"),
-ncol = 3, nrow = 1,  widths = 15,
-  heights = 10)
+load_classifier_df(nir_seed)
 ```
 
+### Load the pre-trained model and use on data without labeling
+```{r  fig.keep='all', fig.width=10, fig.height=5}
+data(nir_seed)
+pc<-prediction_df(nir_seed[,-313])
+pca_df(pc)
+```
