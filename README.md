@@ -134,12 +134,15 @@ Examples
 ### Classification
 
     data(nir_seed)
-    classification_df(nir_seed,metrics = 2)
+    classification<-classification_df(nir_seed,metrics = 2)
 
     ## Warning in nominalTrainWorkflow(x = x, y = y, wts = weights, info = trainInfo, :
     ## There were missing values in resampled performance measures.
 
-    ## $`Cross-validation`
+##### Cross-validation
+
+    classification$`Cross-validation`
+
     ## Partial Least Squares 
     ## 
     ## 210 samples
@@ -187,8 +190,11 @@ Examples
     ## 
     ## Accuracy was used to select the optimal model using the largest value.
     ## The final value used for the model was ncomp = 10.
-    ## 
-    ## $Training_results
+
+##### Train results
+
+    classification$Training_results
+
     ##               Accuracy                  Kappa                Mean_F1 
     ##              0.9666667              0.9500000              0.9665198 
     ##       Mean_Sensitivity       Mean_Specificity    Mean_Pos_Pred_Value 
@@ -196,9 +202,12 @@ Examples
     ##    Mean_Neg_Pred_Value         Mean_Precision            Mean_Recall 
     ##              0.9835141              0.9668364              0.9666667 
     ##    Mean_Detection_Rate Mean_Balanced_Accuracy 
-    ##              0.3222222              0.9750000 
-    ## 
-    ## $Testing_results
+    ##              0.3222222              0.9750000
+
+##### Test results
+
+    classification$Testing_results
+
     ##               Accuracy                  Kappa                Mean_F1 
     ##              0.9777778              0.9666667              0.9777778 
     ##       Mean_Sensitivity       Mean_Specificity    Mean_Pos_Pred_Value 
@@ -206,9 +215,17 @@ Examples
     ##    Mean_Neg_Pred_Value         Mean_Precision            Mean_Recall 
     ##              0.9888889              0.9777778              0.9777778 
     ##    Mean_Detection_Rate Mean_Balanced_Accuracy 
-    ##              0.3259259              0.9833333 
-    ## 
-    ## $`Variable importance`
+    ##              0.3259259              0.9833333
+
+##### PLS-DA Plot
+
+    classification$plsplot
+
+![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- --> \#\#\#\#\#
+Variable importance
+
+    classification$`Variable importance`
+
     ## kernelpls variable importance
     ## 
     ##   variables are sorted by maximum importance across the classes
@@ -235,10 +252,6 @@ Examples
     ## 2005.983045        2.132                32.03       21.53
     ## 2211.286184        1.471                31.99       24.44
     ## 2320.118864        3.536                31.90       19.19
-    ## 
-    ## $plsplot
-
-![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ### Load the pre-trained model and validate their performance in external labeled data.
 
@@ -291,4 +304,4 @@ Examples
     pc<-prediction_df(nir_seed[,-313])
     pca_df(pc)
 
-![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->

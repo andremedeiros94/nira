@@ -110,14 +110,34 @@ pca_df(nir_seed,1,2)
 ### Classification
 ```{r, message=FALSE, fig.keep='all', fig.width=10, fig.height=7}
 data(nir_seed)
-classification_df(nir_seed,metrics = 2)
+classification<-classification_df(nir_seed,metrics = 2)
 ```
-
+##### Cross-validation
+```{r  fig.keep='all', fig.width=5, fig.height=5,  message=FALSE}
+classification$`Cross-validation`
+```
+##### Train results 
+```{r  fig.keep='all', fig.width=5, fig.height=5,  message=FALSE}
+classification$Training_results
+```
+##### Test results
+```{r  fig.keep='all', fig.width=5, fig.height=5,  message=FALSE}
+classification$Testing_results
+```
+##### PLS-DA Plot
+```{r  fig.keep='all', fig.width=10, fig.height=5,  message=FALSE}
+classification$plsplot
+```
+##### Variable importance
+```{r  fig.keep='all', fig.width=10, fig.height=5,  message=FALSE}
+classification$`Variable importance`
+```
 ### Load the pre-trained model and validate their performance in external labeled data.
-```{r  fig.keep='all', fig.width=5, fig.height=5}
+```{r  fig.keep='all', fig.width=5, fig.height=5,  message=FALSE}
 data(nir_seed)
 load_classifier_df(nir_seed)
 ```
+
 
 ### Load the pre-trained model and use on data without labeling
 ```{r  fig.keep='all', fig.width=10, fig.height=5}
