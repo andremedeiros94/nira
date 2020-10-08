@@ -18,12 +18,13 @@
 #' @export
 
 classification_df<-function(df,
-                            splitting=0.7,
+                            splitting = 0.7,
                             algorithm="kernelpls",
                             method_cv="repeatedcv",
                             number_cv = 10,
-                            repeats_cv=3, 
+                            repeats_cv = 3, 
                             tL = 10, 
+                            metrics=1,
                             save=T, 
                             varimp=T,
                             plsplot=T){
@@ -36,12 +37,22 @@ classification_df<-function(df,
   base_treinamento <- df[trainIndex,]
   base_teste<- df[-trainIndex,]
   
+if (metrics==1){
   set.seed(7)
   fitControl <- trainControl(
     method = method_cv,
     number = number_cv,
     ## repeated ten times
-    repeats = repeats_cv)
+    repeats = repeats_cv)}
+if (metrics==2){
+  set.seed(7)
+  fitControl <- trainControl(
+    method = method_cv,
+    number = number_cv,
+    repeats = repeats_cv,
+    classProbs = TRUE,
+    savePredictions='all',
+    summaryFunction = multiClassSummary)}
   
   
   model = train(base_treinamento[,-length(df)],
@@ -55,12 +66,29 @@ classification_df<-function(df,
   
   previsoes = predict(model , newdata = base_treinamento[,-length(df)])
   matriz_confusao = table(previsoes, base_treinamento[,length(df)])
-  results_training<-confusionMatrix(matriz_confusao)
+  if (metrics==1) results_training<-confusionMatrix(matriz_confusao)
+  
+  
+  if (metrics==2){
+  previsoes<-as.data.frame(previsoes)
+  data<-as.data.frame(cbind(base_treinamento[, length(base_treinamento)], previsoes))
+  names(data)<-c('obs','pred')
+  data[,1]<-as.factor(data[,1])
+  results_training<-multiClassSummary(data, lev = levels(data$obs)) }
+  
   b<-results_training
+  
   
   previsoes = predict(model, newdata = base_teste[,-length(df)])
   matriz_confusao = table(previsoes,base_teste[, length(df)])
-  results_test<-confusionMatrix(matriz_confusao)
+  if (metrics==1) results_test<-confusionMatrix(matriz_confusao)
+  
+  if (metrics==2){
+  previsoes<-as.data.frame(previsoes)
+  data<-as.data.frame(cbind(base_teste[, length(base_teste)], previsoes))
+  names(data)<-c('obs','pred')
+  data[,1]<-as.factor(data[,1])
+  results_test<-multiClassSummary(data, lev = levels(data$obs)) }
   c<-results_test
   
   if (varimp==T) imp<-varImp(model, scale=TRUE)
