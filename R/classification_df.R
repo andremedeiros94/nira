@@ -38,7 +38,8 @@ classification_df<-function(df,
                                             times = 1)
           
           base_treinamento <- df[trainIndex,]
-          base_teste<- df[-trainIndex,]
+          if(! splitting==1){base_teste<- df[-trainIndex,]}
+         
           
         if (metrics==1){
           set.seed(7)
@@ -81,7 +82,7 @@ classification_df<-function(df,
           
           b<-results_training
           
-          
+          if(! splitting==1){
           previsoes = predict(model, newdata = base_teste[,-length(df)])
           matriz_confusao = table(previsoes,base_teste[, length(df)])
           if (metrics==1) results_test<-confusionMatrix(matriz_confusao)
@@ -92,7 +93,7 @@ classification_df<-function(df,
           names(data)<-c('obs','pred')
           data[,1]<-as.factor(data[,1])
           results_test<-multiClassSummary(data, lev = levels(data$obs)) }
-          c<-results_test
+          c<-results_test}
           
           if (varimp==T) imp<-varImp(model, scale=TRUE)
           
@@ -111,8 +112,8 @@ classification_df<-function(df,
                                                        "turquoise2", "skyblue", "steelblue", "blue2", "navyblue",
                                                        "orange", "tomato", "coral2", "palevioletred", "violetred"))}
           
-          
-          mylist<-list("Cross-validation"=a,"Training_results"=b,"Testing_results"=c, "Variable importance"=imp, "plsplot"=plot)
+          if(!splitting==1){mylist<-list("Cross-validation"=a,"Training_results"=b,"Testing_results"=c, "Variable importance"=imp, "plsplot"=plot)
+          }else{mylist<-list("Cross-validation"=a,"Training_results"=b, "Variable importance"=imp, "plsplot"=plot)}
           return(mylist)
         }
 
