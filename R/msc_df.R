@@ -7,7 +7,7 @@
 
 msc_df <- function(df, reference = NULL) {
   if (! is.data.frame (df)) {stop ("deve ser um data.frame")}
-  X <- Filter(is.numeric, dados) 
+  X <- Filter(is.numeric, df) 
   X<-as.matrix(X)
   y <- as.list(Filter(is.character, df))
   if (is.null(reference)) reference <- colMeans(X)

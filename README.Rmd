@@ -70,16 +70,36 @@ library(nira)
 
 ## Examples
 ### Spectra Visualization
-```{r, fig.keep='all', fig.width=15, fig.height=5}
+```{r, fig.keep='all', fig.width=15, fig.height=35}
 library(nira)
 library(ggpubr) #for ggarrange
 # raw spectra
 a<-plotraw_df(nir_seed)
 # mean spectra per class
 b<-plotmean_df(nir_seed)
-ggarrange(a, b,
-  labels = c("Raw spectra", "Mean spectra"),
-  ncol = 2, nrow = 1)
+# center
+c<-plotraw_df(center_df(nir_seed))
+d<-plotmean_df(center_df(nir_seed))
+# Autoscaling
+e<-plotraw_df(autoscaling_df(nir_seed))
+f<-plotmean_df(autoscaling_df(nir_seed))
+# SNV
+g<-plotraw_df(snv_df(nir_seed))
+h<-plotmean_df(snv_df(nir_seed))
+# MSC
+msc_df(nir_seed)
+i<-plotraw_df(msc_df(nir_seed))
+j<-plotmean_df(msc_df(nir_seed))
+# 1st derivative with Savitzky-Golay smoothing
+k<-plotraw_df(der_SG(nir_seed,1))
+l<-plotmean_df(der_SG(nir_seed,1))
+# 2nd derivative with Savitzky-Golay smoothing
+m<-plotraw_df(der_SG(nir_seed,2))
+n<-plotmean_df(der_SG(nir_seed,2))
+
+ggarrange(a, b,c,d,e,f,g,h,i,j,k,l,m,n,
+  labels = c("Raw spectra", "Mean spectra", "Center", "Center","Autoscaling","Autoscaling","SNV","SNV","MSC", "MSC","1st derivative", "1st derivative", "2nd derivative", "2nd derivative" ),
+  ncol = 2, nrow = 7)
 ```
 
 
