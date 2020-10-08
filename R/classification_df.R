@@ -12,7 +12,6 @@
 #' @param save Salvar modelo
 #' @param varimp importancia das variaveis
 #' @param plsplot Plotar PLS
-#' @import pls
 #' @import caret 
 #' @import e1071
 #' @examples
