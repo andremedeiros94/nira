@@ -27,13 +27,12 @@ plotmean_df<-function(df){
                                nlevels(df$class)*((ncol(df)-1)/nlevels(df$class))))
   df1$variable<-as.numeric(as.character(df1$variable))
   
-  ggplot(data=df1,
+  p<-ggplot(data=df1,
          aes(x=variable, y=value, group=ordem, colour=class)) + theme_classic()+
     geom_line()+scale_x_continuous(name ="Spectral wavelength", minor_breaks=2, n.breaks = 6)+
     scale_color_manual(name="Class",values=c("green", "violet", "mediumpurple1", "slateblue1", "purple", "purple3",
                                                 "turquoise2", "skyblue", "steelblue", "blue2", "navyblue",
-                                                "orange", "tomato", "coral2", "palevioletred", "violetred"))
-   }
+                                                "orange", "tomato", "coral2", "palevioletred", "violetred"))}
 
 if (is.numeric(df[,ncol(df)])){
   df["Seed"]<-rep(1,nrow(df))
@@ -42,10 +41,12 @@ if (is.numeric(df[,ncol(df)])){
   df1<-melt(df1,id= "Seed")
   df1$variable<-as.double(levels(df1$variable))[df1$variable]
   
-  ggplot(data=df1,
+  p<-ggplot(data=df1,
          aes(x=variable, y=value, group=Seed, col=Seed))+ 
     theme_classic()+
     geom_line()+scale_color_gradientn(colours = rainbow(10))+
     xlab("Spectral wavelength")}
+  
+  return(p)
 }
   
