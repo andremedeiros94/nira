@@ -8,6 +8,8 @@ import_csv(directory)
 }
 \arguments{
 \item{directory}{Enter working directory address.}
+
+\item{conv}{converter para nm se TRUE}
 }
 \description{
 Import and merge CSV NIR files

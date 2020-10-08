@@ -7,10 +7,10 @@
 autoscaling(df)
 }
 \arguments{
-\item{df}{data frame with the last column corresponding to the class or group being used.}
+\item{df}{Data Frame}
 }
 \description{
-Function for data pre-treatment.
+funcao para preprocessamento dos espectros
 }
 \examples{
 data(nir_seed)

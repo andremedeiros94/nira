@@ -1,6 +1,6 @@
 Package: nira
 Title: Near infrared data Analysis
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: 
     person("Andre Dantas de","Medeiros", email = "andre.d.medeiros@ufv.br",role = c("aut","cre"))
 Description: Package for data analysis of near infrared spectra. 
@@ -10,13 +10,13 @@ Imports:
          ggplot2,
          ggpubr,
          factoextra,
-         pls,
          FactoMineR,
          prospectr,
 		 readxl,
 		 dplyr,
 		 caret,
-		 e1071
+		 e1071,
+		 pls
 License: use_gpl3_license()
 Encoding: UTF-8
 LazyData: true

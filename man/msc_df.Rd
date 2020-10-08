@@ -2,13 +2,13 @@
 % Please edit documentation in R/msc_df.R
 \name{msc_df}
 \alias{msc_df}
-\title{Applying Multiplicative Scatter Correction}
+\title{msc_df}
 \usage{
-msc(dados)
+msc_df()
 }
 \arguments{
 \item{dados}{data frame with the last column corresponding to the class or group being used.}
 }
 \description{
-Function for data pre-treatment.
+funcao para pre-processamento dos espectros com o Multiplicative Scatter Correction
 }

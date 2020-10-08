@@ -1,8 +1,7 @@
 #' @title Autoscaling 
-#' @description Function for data pre-treatment.
-#' @param df data frame with the last column corresponding to the class or group being used.
+#' @description funcao para preprocessamento dos espectros
+#' @param df Data Frame
 #' @usage autoscaling(df)
-#' @import ggpubr
 #' @examples
 #' data(nir_seed)
 #' df<-autoscaling_df(nir_seed)
@@ -16,8 +15,10 @@
 
 autoscaling_df<-function(df){
   if (! is.data.frame (df)) {stop ("must be a dataframe")}
+  if (is.numeric(df[,ncol(df)])) {df<-scale(df)}
   df[,-ncol(df)]<-scale(df[,-ncol(df)])
-    return(as.data.frame(df))
+  
+  return(as.data.frame(df))
 }
 
 

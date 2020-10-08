@@ -2,15 +2,15 @@
 % Please edit documentation in R/center_df.R
 \name{center_df}
 \alias{center_df}
-\title{Center}
+\title{Center_df}
 \usage{
 scale_center(dados)
 }
 \arguments{
-\item{dados}{data frame with the last column corresponding to the class or group being used.}
+\item{dados}{data frame}
 }
 \description{
-Function for data pre-treatment.
+funcao para centralizar os dados na media
 }
 \examples{
 data(nir_seed)

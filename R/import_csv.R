@@ -1,6 +1,7 @@
 #' @title Import CSV
 #' @description Import and merge CSV NIR files
 #' @param directory Enter working directory address.
+#' @param conv converter para nm se TRUE
 #' @usage import_csv(directory)
 #' @import dplyr
 #' @import readxl

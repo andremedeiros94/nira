@@ -1,6 +1,6 @@
-#' @title Center
-#' @description Function for data pre-treatment.
-#' @param dados data frame with the last column corresponding to the class or group being used.
+#' @title Center_df
+#' @description funcao para centralizar os dados na media
+#' @param dados data frame 
 #' @usage scale_center(dados)
 #' @import ggpubr
 #' @examples

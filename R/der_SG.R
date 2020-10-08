@@ -1,10 +1,10 @@
-#' @title Applying derivatives with Savitzky-Golay smoothing
-#' @description Function for data pre-treatment.
-#' @param df data frame with the last column corresponding to the class or group being used
+#' @title der_SG Applying derivatives with smoothing
+#' @description funcao para pre-processamento com a aplicacao de derivadas com a suavizacao de Savitzky-Golay 
+#' @param df data frame 
 #' @param m the differentiation order.
 #' @param p the polynomial order.
 #' @param w a window size (must be odd).
-#' @usage der_SG(df)
+#' @usage der_SG( )
 #' @import prospectr
 #' @import ggpubr
 #' @examples
@@ -26,13 +26,15 @@
 #' 
 der_SG<-function(df,m=1,p=2,w=11){
 if (! is.data.frame (df)) {stop ("must be a dataframe")}
-names(df)[names(df) == rev(names(df))[1]] <- 'class'
-df1<-as.data.frame(df[,-ncol(df)])
+
+if (! is.numeric(df[,ncol(df)])){names(df)[names(df) == rev(names(df))[1]] <- 'class'
+                                df1<-as.data.frame(df[,-ncol(df)])}else{
+                                  df1<-as.data.frame(df)}
+  
 df1<- savitzkyGolay(df1,m,p,w)
 df1<-as.data.frame(df1)
-df1$class<-as.factor(df$class)
-df<-df1
-return(as.data.frame(df))
+
+if (! is.numeric(df[,ncol(df)])){df1$class<-as.factor(df$class)}
+
+return(as.data.frame(df1))
 }
-
-

@@ -2,17 +2,17 @@
 % Please edit documentation in R/pca_df.R
 \name{pca_df}
 \alias{pca_df}
-\title{Autoscaling and center}
+\title{pca_df}
 \usage{
-pca_df(df)
+pca_df()
 }
 \arguments{
-\item{df}{data frame with the last column corresponding to the class or group being used.}
+\item{df}{data frame}
 
-\item{axes}{a numeric vector of length 2 specifying the dimensions to be plotted.}
+\item{compx}{numero especificando qual o componente sera disposto no eixo y}
 }
 \description{
-Function for data pre-treatment.
+funcao para analise exploratoria de componentes principais
 }
 \examples{
 data(nir_seed)

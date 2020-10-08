@@ -66,6 +66,8 @@ library(nira)
 
 `load_classifier_df()`: Function to load and apply classifier created with the classification_df function
 
+`prediction_df_df()`: Function to apply the classifier to new data without labels
+
 ## Examples
 ### Spectra Visualization
 ```{r, fig.keep='all', fig.width=15, fig.height=5}

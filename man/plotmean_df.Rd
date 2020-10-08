@@ -2,18 +2,18 @@
 % Please edit documentation in R/plotmean_df.R
 \name{plotmean_df}
 \alias{plotmean_df}
-\title{Visualization of raw spectra}
+\title{plotmean_df}
 \usage{
 plotmean_df(df)
 }
 \arguments{
-\item{df}{data frame with the last column corresponding to the class or group being used.}
+\item{df}{data frame}
 }
 \description{
-Function to create graphics with NIR spectra
+funcao para plotagens de graficos do espectro espectro medio das classes
 }
 \details{
-Call files with check.name = T. The name of the spectrum variables must be numeric.
+O nome das variaveis do espectro deve ser um numero. Chame os arquivos com check.name = F
 }
 \examples{
 data(nir_seed)

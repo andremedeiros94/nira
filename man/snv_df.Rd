@@ -2,13 +2,13 @@
 % Please edit documentation in R/snv_df.R
 \name{snv_df}
 \alias{snv_df}
-\title{Applying standard normal variate}
+\title{SNV}
 \usage{
 snv(df)
 }
 \arguments{
-\item{df}{data frame with the last column corresponding to the class or group being used.}
+\item{df}{data frame}
 }
 \description{
-Function for data pre-treatment.
+funcao para pre-processamento com Standard Normal Variate
 }

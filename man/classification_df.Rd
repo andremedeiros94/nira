@@ -7,11 +7,11 @@
 classification_df(df)
 }
 \arguments{
-\item{df}{data frame with the last column corresponding to the class or group being used.}
+\item{df}{data frame com a ultima coluna com a classe correspondente}
 
-\item{splitting}{Establishes the proportion and creates divisions balanced the training data and test.}
+\item{splitting}{proporcao da divisao do banco de dados para o treinamento e teste}
 
-\item{algorithm}{Algorithm that will be used to create the models.}
+\item{algorithm}{algoritmo para criacao de modelos default plsda}
 
 \item{method_cv}{The resampling method: "boot", "boot632", "optimism_boot", "boot_all", "cv", "repeatedcv", "LOOCV", "LGOCV"}
 
@@ -19,14 +19,18 @@ classification_df(df)
 
 \item{tL}{tuneLength}
 
+\item{metrics}{1 para metricas por classe e 2 para metricas medias}
+
 \item{save}{Salvar modelo}
+
+\item{varimp}{importancia das variaveis}
 
 \item{plsplot}{Plotar PLS}
 
 \item{repeat_cv}{For repeated k-fold cross-validation only: the number of complete sets of folds to compute}
 }
 \description{
-Function to develop classification models
+funcao para desenvolver modelos de classificacao
 }
 \examples{
 data(nir_seed)

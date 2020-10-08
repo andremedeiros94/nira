@@ -1,10 +1,12 @@
-#' @title Autoscaling and center
-#' @description Function for data pre-treatment.
-#' @param df data frame with the last column corresponding to the class or group being used.
-#' @param axes a numeric vector of length 2 specifying the dimensions to be plotted.
-#' @usage pca_df(df)
+#' @title pca_df
+#' @description funcao para analise exploratoria de componentes principais
+#' @param df data frame 
+#' @param compx numero especificando qual o componente sera disposto no eixo x
+#' @param compx numero especificando qual o componente sera disposto no eixo y
+#' @usage pca_df()
 #' @import factoextra
 #' @import FactoMineR
+#' @import ggpubr
 #' @examples
 #' data(nir_seed)
 #' pca_df(nir_seed)
@@ -12,6 +14,8 @@
 
 pca_df<-function(df,compx = 1,compy= 2) {
 if (! is.data.frame (df)) {stop ("must be a dataframe")}
+ 
+if (! is.numeric(df[,ncol(df)])){
 df_pca <- PCA(df[,-ncol(df)], graph = FALSE)
 fviz_eig(df_pca)
 get_eig(df_pca)
@@ -30,6 +34,22 @@ a<-fviz_pca_ind(df_pca,
                   legend.title = "Class",
                   repel=T
 )+ theme_minimal()  +  theme(panel.grid = element_blank())+ scale_shape_manual(values=seq(0,16))
+}else{
+ 
+  df_pca <- PCA(df, graph = FALSE)
+  fviz_eig(df_pca)
+  get_eig(df_pca)
+  
+  a<-fviz_pca_ind(df_pca, 
+                  axes = c(compx,compy),#eixos #axes.linetype = "blank"
+                  geom.ind = c('point'),
+                  pointsize=3,
+                  pointshape=19,
+                  col.ind = "blue", # color by groups
+                  alpha.ind = 0.5,
+                  # addEllipses = T, ellipse.type = "confidence", 
+                  repel=T)+ theme_minimal()+
+    theme(panel.grid = element_blank())}
 
 b<-fviz_pca_var(df_pca,
                 geom.var = c("arrow"),

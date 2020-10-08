@@ -2,12 +2,12 @@
 % Please edit documentation in R/der_SG.R
 \name{der_SG}
 \alias{der_SG}
-\title{Applying derivatives with Savitzky-Golay smoothing}
+\title{der_SG Applying derivatives with smoothing}
 \usage{
-der_SG(df)
+der_SG( )
 }
 \arguments{
-\item{df}{data frame with the last column corresponding to the class or group being used}
+\item{df}{data frame}
 
 \item{m}{the differentiation order.}
 
@@ -16,7 +16,7 @@ der_SG(df)
 \item{w}{a window size (must be odd).}
 }
 \description{
-Function for data pre-treatment.
+funcao para pre-processamento com a aplicacao de derivadas com a suavizacao de Savitzky-Golay
 }
 \examples{
 data(nir_seed)
