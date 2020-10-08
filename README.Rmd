@@ -4,7 +4,7 @@ output: github_document
 ![](https://raw.githubusercontent.com/admedeiros/nira/master/logo/logo-01.png)
 
 # `nira`: Near-infrared data analysis
-*Last update: 14.09.2020*
+*Last update: 08.10.2020*
 
 *Author: M.Sc André Dantas de Medeiros (Universidade Federal de viçosa). Email: andre.d.medeiros@ufv.br*
 
