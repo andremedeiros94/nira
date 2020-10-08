@@ -4,7 +4,7 @@
 `nira`: Near-infrared data analysis
 ===================================
 
-*Last update: 14.09.2020*
+*Last update: 08.10.2020*
 
 *Author: M.Sc André Dantas de Medeiros (Universidade Federal de viçosa).
 Email:
@@ -78,6 +78,9 @@ transformation.
 `load_classifier_df()`: Function to load and apply classifier created
 with the classification\_df function
 
+`prediction_df_df()`: Function to apply the classifier to new data
+without labels
+
 Examples
 --------
 
@@ -85,9 +88,7 @@ Examples
 
     library(nira)
 
-    ## Warning: replacing previous import 'caret::R2' by 'pls::R2' when loading 'nira'
-
-    ## nira version 0.1.0
+    ## nira version 0.2.0
 
     ## check the github repository at https://github.com/admedeiros/nira
 
