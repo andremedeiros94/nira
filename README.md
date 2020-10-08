@@ -303,7 +303,6 @@ Examples
 
     data(nir_seed)
     pc<-prediction_df(nir_seed[,-313])
-    pca_df(pc)+ 
-      scale_color_manual(name="Class",values=c("red", "green", "blue") )
+    pca_df(pc)
 
 ![](README_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
