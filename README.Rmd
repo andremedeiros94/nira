@@ -103,7 +103,7 @@ ggarrange(a, b,c,d,e,f,g,h,i,j,k,l,m,n,
 
 
 ### View of the exploratory principal component analysis
-```{r  fig.keep='all', fig.width=10, fig.height=5}
+```{r,echo=T, fig.keep='all', fig.width=10, fig.height=5}
 pca_df(nir_seed,1,2)
 ```
 
@@ -128,11 +128,12 @@ classification$Testing_results
 ```{r  fig.keep='all', fig.width=10, fig.height=5,  message=FALSE}
 classification$plsplot
 ```
+
 ##### Variable importance
 ```{r  fig.keep='all', fig.width=10, fig.height=5,  message=FALSE}
 classification$`Variable importance`
 ```
-### Load the pre-trained model and validate their performance in external labeled data.
+### Load the pre-trained model and validate their performance in external labeled data
 ```{r  fig.keep='all', fig.width=5, fig.height=5,  message=FALSE}
 data(nir_seed)
 load_classifier_df(nir_seed)

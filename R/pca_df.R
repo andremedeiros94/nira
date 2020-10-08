@@ -12,7 +12,12 @@
 #' pca_df(nir_seed)
 #' @export
 
-pca_df<-function(df,compx = 1,compy= 2) {
+pca_df<-function(df,
+                 compx=1,
+                 compy=2,
+                 color=c("green", "violet", "mediumpurple1", "slateblue1", "purple", "purple3",
+                         "turquoise2", "skyblue", "steelblue", "blue2", "navyblue",
+                         "orange", "tomato", "coral2", "palevioletred", "violetred")) {
 if (! is.data.frame (df)) {stop ("must be a dataframe")}
  
 if (! is.numeric(df[,ncol(df)])){
@@ -27,9 +32,7 @@ a<-fviz_pca_ind(df_pca,
                   geom.ind = c('point'),
                   fill.ind = df$class,
                   col.ind = df$class, # color by groups
-                  palette = c("green", "violet", "mediumpurple1", "slateblue1", "purple", "purple3",
-                              "turquoise2", "skyblue", "steelblue", "blue2", "navyblue",
-                              "orange", "tomato", "coral2", "palevioletred", "violetred"),
+                  palette = c(color),
                   addEllipses = T, ellipse.type = "confidence", 
                   legend.title = "Class",
                   repel=T

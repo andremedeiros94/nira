@@ -106,7 +106,10 @@ classification_df<-function(df,
             
             plot<-ggplot(comp, aes(x=V1,y=V2, color= class, shape = class)) + geom_point(size=3, alpha = 0.5)+
               labs(x = "Comp 1",
-                   y = "Comp 2")+ theme_light ()+ stat_ellipse(level = 0.90, geom = "polygon", alpha = 0.1, aes(fill = class))}
+                   y = "Comp 2")+ theme_light ()+ stat_ellipse(level = 0.90, geom = "polygon", alpha = 0.1, aes(fill = class))+
+              scale_color_manual(values=c("green", "violet", "mediumpurple1", "slateblue1", "purple", "purple3",
+                                                       "turquoise2", "skyblue", "steelblue", "blue2", "navyblue",
+                                                       "orange", "tomato", "coral2", "palevioletred", "violetred"))}
           
           
           mylist<-list("Cross-validation"=a,"Training_results"=b,"Testing_results"=c, "Variable importance"=imp, "plsplot"=plot)

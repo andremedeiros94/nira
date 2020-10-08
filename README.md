@@ -221,8 +221,9 @@ Examples
 
     classification$plsplot
 
-![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- --> \#\#\#\#\#
-Variable importance
+![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+
+##### Variable importance
 
     classification$`Variable importance`
 
@@ -253,7 +254,7 @@ Variable importance
     ## 2211.286184        1.471                31.99       24.44
     ## 2320.118864        3.536                31.90       19.19
 
-### Load the pre-trained model and validate their performance in external labeled data.
+### Load the pre-trained model and validate their performance in external labeled data
 
     data(nir_seed)
     load_classifier_df(nir_seed)
@@ -302,6 +303,7 @@ Variable importance
 
     data(nir_seed)
     pc<-prediction_df(nir_seed[,-313])
-    pca_df(pc)
+    pca_df(pc)+ 
+      scale_color_manual(name="Class",values=c("red", "green", "blue") )
 
 ![](README_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
