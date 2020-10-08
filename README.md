@@ -100,7 +100,6 @@ Examples
     a<-plotraw_df(nir_seed)
     # mean spectra per class
     b<-plotmean_df(nir_seed)
-
     ggarrange(a, b,
       labels = c("Raw spectra", "Mean spectra"),
       ncol = 2, nrow = 1)
