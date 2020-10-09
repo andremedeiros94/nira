@@ -6,3 +6,5 @@ check_man()
 document()
 check()
 build()
+
+classification_df(dados, splitting = 1, metrics = 2)
