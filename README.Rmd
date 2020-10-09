@@ -68,6 +68,55 @@ library(nira)
 
 `prediction_df_df()`: Function to apply the classifier to new data without labels
 
+```{r,echo=F, fig.height=10, fig.width=15,message=FALSE, warning=FALSE}
+library(nira)
+library(ggpubr) #for ggarrange
+# raw spectra
+a<-plotraw_df(nir_seed)
+# mean spectra per class
+b<-plotmean_df(nir_seed)
+# center
+c<-plotraw_df(center_df(nir_seed))
+d<-plotmean_df(center_df(nir_seed))
+# Autoscaling
+e<-plotraw_df(autoscaling_df(nir_seed))
+f<-plotmean_df(autoscaling_df(nir_seed))
+# SNV
+g<-plotraw_df(snv_df(nir_seed))
+h<-plotmean_df(snv_df(nir_seed))
+# MSC
+i<-plotraw_df(msc_df(nir_seed))
+j<-plotmean_df(msc_df(nir_seed))
+# 1st derivative with Savitzky-Golay smoothing
+k<-plotraw_df(der_SG(nir_seed,1))
+l<-plotmean_df(der_SG(nir_seed,1))
+# 2nd derivative with Savitzky-Golay smoothing
+m<-plotraw_df(der_SG(nir_seed,2))
+n<-plotmean_df(der_SG(nir_seed,2))
+
+x<-ggarrange(a, b,c,d,e,f,g,h,i,j,k,l,m,n, common.legend = TRUE,
+          labels = c("Raw spectra", "Mean spectra", "Center          ", "","Autoscaling","","SNV               ","","MSC              ", "","1st derivative", "", "2nd derivative", "" ),
+          font.label = list(size=12),
+          hjust = -0.7,
+          vjust = 1,
+          ncol = 2, nrow = 7)
+dados<-nir_seed
+classification<-classification_df(dados)
+p<-classification$plsplot
+q<-pca_df(nir_seed)
+
+y<-ggarrange(q,p,
+             labels = c("PCA", "PLS-DA"),
+             hjust = -8,
+              vjust = 2,
+              ncol = 1, nrow = 2)
+ggarrange(x,y,
+          labels = c("Spetral",""),
+          ncol = 2, nrow = 1)
+
+```
+
+
 ## Examples
 ### Spectra Visualization
 ```{r, fig.keep='all', fig.width=15, fig.height=35}

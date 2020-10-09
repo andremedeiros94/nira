@@ -81,21 +81,15 @@ with the classification\_df function
 `prediction_df_df()`: Function to apply the classifier to new data
 without labels
 
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
 Examples
 --------
 
 ### Spectra Visualization
 
     library(nira)
-
-    ## nira version 0.2.0
-
-    ## check the github repository at https://github.com/admedeiros/nira
-
     library(ggpubr) #for ggarrange
-
-    ## Loading required package: ggplot2
-
     # raw spectra
     a<-plotraw_df(nir_seed)
     # mean spectra per class
@@ -123,13 +117,13 @@ Examples
       labels = c("Raw spectra", "Mean spectra", "Center", "Center","Autoscaling","Autoscaling","SNV","SNV","MSC", "MSC","1st derivative", "1st derivative", "2nd derivative", "2nd derivative" ),
       ncol = 2, nrow = 7)
 
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 ### View of the exploratory principal component analysis
 
     pca_df(nir_seed,1,2)
 
-![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ### Classification
 
@@ -221,7 +215,7 @@ Examples
 
     classification$plsplot
 
-![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 ##### Variable importance
 
@@ -305,4 +299,4 @@ Examples
     pc<-prediction_df(nir_seed[,-313])
     pca_df(pc)
 
-![](README_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
