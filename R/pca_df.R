@@ -64,7 +64,6 @@ b<-fviz_pca_var(df_pca,
 )+ theme_minimal()
 
 ggarrange(a, b,
-          labels = c("A", "B"),
           ncol = 2, nrow = 1)
 }
 
