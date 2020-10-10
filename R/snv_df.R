@@ -14,7 +14,7 @@ snv_df <- function (df) {
     x[,i] = (x[,i]-mean(x[,i]))/sd(x[,i]) 
   }
   x<-as.data.frame(t(x))
-  if(length(y) == 0 & length(y1) == 0 ){df<-X}
+  if(length(y) == 0 & length(y1) == 0 ){df<-x}
   if(length(y) > 0) {df<-cbind(X,y)}
   if(length(y1) > 0) {df<-cbind(X,y1)}
   
