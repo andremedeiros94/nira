@@ -1,0 +1,12 @@
+# NIR dataset description - Dataset name and variables for its construction
+test ## [dataset_name]: Dataset name.
+C:/Users/medei/OneDrive/Documentos/GitHub/niradm ## [working_dir]: Location of working directory. If not provided, current working directory will be used one
+abaxial ## [surface]: Which leaf surface (abaxial, adaxial, both)
+mean ## [reads]: Do all the reads will be taken into account (all, mean)?
+all ## [nir_variables]: Which NIR variables will be used (all, subset)
+           ## [subset_file]: Location of NIR variable subset file, in case option selected in `nir_variables` was `subset`
+especimenid ## [individual_id]: Which variable name corresponds to the individual?
+           ## [individual_list]: Location of a file containing list of specimens to subset data when building datasets with `build_NIRdataset` function.
+face ## [surface_id]: Which variable name corresponds to the leaf surface?
+SP1 ## [group_id]: Which name corresponds to the group category?
+X ## [nir_id]: A string that can be used to grep column names containing NIR data. Default value is '`X`, which precedes all columns with NIR data.

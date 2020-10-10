@@ -4,7 +4,7 @@
 `nira`: Near-infrared data analysis
 ===================================
 
-*Last update: 08.10.2020*
+*Last update: 10.10.2020*
 
 *Author: M.Sc André Dantas de Medeiros (Universidade Federal de viçosa).
 Email:

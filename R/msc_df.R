@@ -10,6 +10,7 @@ msc_df <- function(df, reference = NULL) {
   X <- Filter(is.numeric, df) 
   X<-as.matrix(X)
   y <- as.list(Filter(is.character, df))
+  y1 <- as.list(Filter(is.factor, df))
   if (is.null(reference)) reference <- colMeans(X)
   Z <- cbind(1, reference)
   
@@ -20,8 +21,10 @@ msc_df <- function(df, reference = NULL) {
   
   X<-as.data.frame(res)
   
-  if(length(y) == 0){df<-X}
-  if(length(y) > 0){df<-cbind(X,y)}
+  if(length(y) == 0 & length(y1) == 0 ){df<-X}
+  if(length(y) > 0) {df<-cbind(X,y)}
+  if(length(y1) > 0) {df<-cbind(X,y1)}
   
   return(df)
 }
+
