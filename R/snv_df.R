@@ -15,7 +15,7 @@ snv_df <- function (df) {
   }
   x<-as.data.frame(t(x))
   if(length(y) == 0 & length(y1) == 0 ){df<-x}
-  if(length(y) > 0) {df<-cbind(X,y)}
-  if(length(y1) > 0) {df<-cbind(X,y1)}
+  if(length(y) > 0) {df<-cbind(x,y)}
+  if(length(y1) > 0) {df<-cbind(x,y1)}
   
   return (df) }
